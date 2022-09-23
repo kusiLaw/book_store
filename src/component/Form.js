@@ -9,10 +9,12 @@ const Form = () => (
         placeholder="Book title"
         name="title"
       />
-
-      <select defaultValue="Author" className="input-Author" name="Author">
-        <option value="" selected disabled>Author</option>
-      </select>
+      <input
+        className="input-Author"
+        type="text"
+        placeholder="Author"
+        name="title"
+      />
 
       <button type="button" className="input-submit">Submit</button>
     </div>

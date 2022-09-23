@@ -79,8 +79,8 @@ header {
   list-style-type: none;
   flex-direction: column;
   width: 100%;
-  border-bottom: solid 1px #e8e8e8;
-  border: 2px rebeccapurple;
+  border-bottom: solid 3px #e8e8e8;
+  padding-bottom: 5rem;
 }
 
 .books-item {
