@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&family=Ubuntu:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+html {
+  font-size: 62.5%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: Montserrat, Roboto, sans-serif;
+  min-width: 32rem;
+  font-size: 1.6rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* reset settings for all browser */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.d-flex {
   display: flex;
+}
+
+header {
+  height: 6rem;
+  padding: 2.438rem 6.188rem;
+  background-color: #fff;
+}
+
+.nav-ul {
+  list-style-type: none;
+  align-content: center;
+}
+
+.bookstore-CMS {
+  width: 15rem;
+  height: 2.313rem;
+  margin-left: 2.938rem;
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #0290ff;
+}
+
+.books {
+  width: 3.688rem;
+  text-decoration: none;
+  height: 1rem;
+  margin-left: 2.938rem;
+
+  /* font-size: 0.813rem; */
+  font-size: 1.4rem;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
+.categories {
+  text-decoration: none;
+  width: 6.563rem;
+  height: 1rem;
+  margin-left: 2.938rem;
+  opacity: 0.5;
+  font-size: 1.4rem;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
+.bookContainer {
+  padding: 5%;
+  border-radius: 4px;
+  background-color: #fafafa;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.bookList {
+  list-style-type: none;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: solid 3px #e8e8e8;
+  padding-bottom: 5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.books-item {
+  height: 10.625rem;
+  width: 100%;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
+
+.books-item:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.form-container p {
+  margin-bottom: 2rem;
+  font-size: larger;
+  font-weight: 600;
+  color: var(--warm-grey);
+}
+
+.form-wrap {
+  justify-content: space-between;
+  gap: 5%;
+}
+
+.input-title {
+  width: 40%;
+}
+
+.input-Author {
+  width: 30%;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+input[type=text] {
+  height: 2.813rem;
+  padding: 2rem;
+}
+
+.input-submit {
+  width: 20%;
+  font-weight: 600;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #0290ff;
 }
