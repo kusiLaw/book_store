@@ -1,22 +1,23 @@
 const checkStatus = 'redux/categories/STATUS';
-const initialState = []
+const initialState = [];
 
-//action
+// action
 export const categoriesAction = () => (
- {
-  type: checkStatus,
-  payload : "Under construction"
- }
-)
+  {
+    type: checkStatus,
+    payload: 'Under construction',
+  }
+);
 
-//reducer
-export default categoriesReducer =(state = initialState, action) =>{
- switch(action.type){
-  case checkStatus:
-   return action.payload
+// reducer
+const categoriesReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case checkStatus:
+      return action.payload;
 
-  default:
-   return state
- }
-}
+    default:
+      return state;
+  }
+};
 
+export default categoriesReducer;
