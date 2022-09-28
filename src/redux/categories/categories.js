@@ -3,6 +3,7 @@ const initialState = [];
 
 // action
 export const categoriesAction = () => (
+
   {
     type: checkStatus,
     payload: 'Under construction',

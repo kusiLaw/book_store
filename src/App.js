@@ -6,6 +6,7 @@ import {
 import Header from './component/Header';
 import './App.css';
 import Books from './component/Books';
+import Categories from './component/categories';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Books />} />
-        <Route path="/categories" element={<p>Check status</p>} />
+        <Route path="/categories" element={<Categories />} />
       </Routes>
     </Router>
 
