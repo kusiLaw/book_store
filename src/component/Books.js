@@ -1,30 +1,15 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 import Form from './Form';
 
 const Books = () => {
-  const [bookList] = useState({
-    books: [
-      {
-        id: 1,
-        title: 'Java',
-      },
-      {
-        id: 2,
-        title: 'React',
-      },
-      {
-        id: 3,
-        title: 'Django',
-      },
-    ],
-  });
+  const book = useSelector((state) => state.books);
 
   return (
     <div className="bookContainer d-flex">
       <ul className="bookList d-flex">
-        {bookList.books.map((item) => (
-          <Book key={item.id} title={item.title} />
+        {book.map((item) => (
+          <Book key={item.id} id={item.id} title={item.title} author={item.author} />
         ))}
       </ul>
       <Form />

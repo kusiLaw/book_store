@@ -1,14 +1,25 @@
 const ADD = 'redux/books/ADD';
 const REMOVE = 'redux/books/REMOVE';
-const initialState = [];
+const initialState = [
+  {
+    id: '1',
+    title: 'Java For Beginner',
+    author: 'lawrence',
+  },
+  {
+    id: '2',
+    title: 'Python Deep Dive',
+    author: 'lawrence',
+  },
+];
 
 // action
-const addNewBook = (id, bookName, author) => (
+const addNewBook = (book) => (
   {
     type: ADD,
-    id,
-    book: bookName,
-    author,
+    id: book.id,
+    title: book.title,
+    author: book.author,
   }
 );
 
@@ -25,7 +36,7 @@ const bookReducer = (state = initialState, action) => {
         ...state,
         {
           id: action.id,
-          book: action.bookName,
+          title: action.title,
           author: action.author,
         },
       ];
