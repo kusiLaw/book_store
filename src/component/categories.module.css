@@ -1,0 +1,11 @@
+.categories-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-status {
+  margin: 2rem;
+  padding: 1rem;
+}

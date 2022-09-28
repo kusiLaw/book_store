@@ -3,10 +3,10 @@ import bookReducer from './books/books';
 import categoriesReducer from './categories/categories';
 
 const rootReducer = combineReducers({
-  bookReducer,
-  categoriesReducer,
+  books: bookReducer,
+  categories: categoriesReducer,
 });
 
-const store = configureStore(rootReducer);
-
+const store = configureStore({ reducer: rootReducer });
+// console.log(store.getState())
 export default store;

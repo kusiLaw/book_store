@@ -84,7 +84,6 @@ header {
 }
 
 .books-item {
-  height: 10.625rem;
   width: 100%;
   padding: 2rem 9.188rem 1.625rem 1.688rem;
   border-radius: 4px;
@@ -129,4 +128,43 @@ input[type=text] {
   border-radius: 3px;
   color: #fff;
   background-color: #0290ff;
+}
+
+span {
+  display: block;
+  padding: 0.4rem;
+}
+
+.book-type {
+  opacity: 0.5;
+  font-size: 1.4rem;
+  color: #121212;
+}
+
+.book-title {
+  font-size: 1.8rem;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.book-author {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #4386bf;
+  margin-bottom: 1rem;
+}
+
+.book-bottom {
+  background-color: #fff;
+  border: none;
+  padding: 0.4rem 1.5rem;
+  color: #4386bf;
+}
+
+.book-bottom:first-child {
+  padding-left: 0.5rem;
+}
+
+.book-bottom:not(:last-child) {
+  border-right: solid 1px #e8e8e8;
 }
