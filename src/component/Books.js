@@ -5,11 +5,13 @@ import Form from './Form';
 const Books = () => {
   const book = useSelector((state) => state.books);
 
+  // console.log(Object.keys(book), "book call")
+
   return (
     <div className="bookContainer d-flex">
       <ul className="bookList d-flex">
-        {book.map((item) => (
-          <Book key={item.id} id={item.id} title={item.title} author={item.author} />
+        {Object.keys(book).map((item) => (
+          <Book key={item} id={item} title={book[`${item}`][0].title} author={book[`${item}`][0].author} />
         ))}
       </ul>
       <Form />

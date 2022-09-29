@@ -1,25 +1,12 @@
 const ADD = 'redux/books/ADD';
 const REMOVE = 'redux/books/REMOVE';
-const initialState = [
-  {
-    id: '1',
-    title: 'Java For Beginner',
-    author: 'lawrence',
-  },
-  {
-    id: '2',
-    title: 'Python Deep Dive',
-    author: 'lawrence',
-  },
-];
+const initialState = [];
 
-// action
-const addNewBook = (book) => (
+
+const addNewBook = (books) => (
   {
     type: ADD,
-    id: book.id,
-    title: book.title,
-    author: book.author,
+    payload: books,
   }
 );
 
@@ -32,20 +19,19 @@ const removeBook = (id) => ({
 const bookReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD:
-      return [
+      console.log(action.payload);
+      // if (action.payload.length > 0){
+      return {
         ...state,
-        {
-          id: action.id,
-          title: action.title,
-          author: action.author,
-        },
-      ];
+        ...action.payload,
+      };
+      // }
 
     case REMOVE:
-      return state.filter((el) => el.id !== action.id);
-
+      // return state.filter((el) => el.id !== action.id);
+      console.log(action.id);
     default:
-      return initialState;
+      return state;
   }
 };
 

@@ -5,9 +5,21 @@ import { removeBook } from '../redux/books/books';
 const Book = ({ id, title, author }) => {
   const dispatch = useDispatch();
 
+ 
+
+  const deleteBook = async()=>{
+   const response = await fetch(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/EF3HU7mC3UuQNf2vAE1O/books/${id}`,
+   {
+    method: 'DELETE'
+  });
+  
+  }
+
+
   const Remove = () => {
-    dispatch(removeBook(id));
-  };
+   deleteBook()
+   dispatch(removeBook(id));
+ };
 
   return (
     <li className="books-item">
