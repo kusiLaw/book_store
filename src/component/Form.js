@@ -1,26 +1,28 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useDispatch } from 'react-redux';
-import { addNewBook } from '../redux/books/books';
+import { getBooks, addBook } from '../redux/books/books';
 
 const Form = () => {
   const dispatch = useDispatch();
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (title.trim() !== '' && author.trim() !== '') {
-      const book = {
-        id: uuidv4(),
-        title,
-        author,
-      };
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
 
-      dispatch(addNewBook(book));
-      setTitle('');
-      setAuthor('');
-    }
+  const addNewBook = async () => {
+    const book = {
+      item_id: uuidv4(),
+      title,
+      author,
+      category: 'Fiction',
+    };
+
+    dispatch(addBook(book));
+    setTitle('');
+    setAuthor('');
   };
 
   return (
@@ -44,7 +46,7 @@ const Form = () => {
           onChange={(e) => { setAuthor(e.target.value); }}
         />
 
-        <button onClick={handleSubmit} type="button" className="input-submit">Submit</button>
+        <button onClick={addNewBook} type="button" className="input-submit">Submit</button>
       </div>
     </form>
   );
