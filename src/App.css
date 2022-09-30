@@ -26,8 +26,14 @@ body {
 
 header {
   height: 6rem;
-  padding: 2.438rem 6.188rem;
+  padding: 2.438rem 5%;
   background-color: #fff;
+  position: relative;
+  flex: 1 1 auto;
+}
+
+nav {
+  flex-shrink: 3;
 }
 
 .nav-ul {
@@ -38,10 +44,33 @@ header {
 .bookstore-CMS {
   width: 15rem;
   height: 2.313rem;
-  margin-left: 2.938rem;
+  margin-left: 1%;
   font-size: 1.875rem;
   font-weight: bold;
   color: #0290ff;
+  flex-shrink: 0;
+}
+
+.profile-oval {
+  flex-shrink: 2;
+  width: 3.5rem;
+  height: 3.5rem;
+  align-self: center;
+  justify-self: flex-end;
+  border-radius: 50%;
+  padding: 0.875rem;
+  border: solid 2px #e8e8e8;
+  position: absolute;
+  right: 5%;
+  color: #0290ff;
+  font-size: larger;
+  justify-content: center;
+}
+
+.profile {
+  color: #0290ff;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .books {
@@ -49,8 +78,6 @@ header {
   text-decoration: none;
   height: 1rem;
   margin-left: 2.938rem;
-
-  /* font-size: 0.813rem; */
   font-size: 1.4rem;
   letter-spacing: 1.9px;
   color: #121212;
@@ -69,6 +96,7 @@ header {
 
 .bookContainer {
   padding: 5%;
+  padding-bottom: 10%;
   border-radius: 4px;
   background-color: #fafafa;
   flex-direction: column;
@@ -85,10 +113,14 @@ header {
 
 .books-item {
   width: 100%;
-  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  padding: 2rem;
+  padding-right: 6%;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   background-color: #fff;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1 1 auto;
 }
 
 .books-item:not(:last-child) {
@@ -145,6 +177,7 @@ span {
   font-size: 1.8rem;
   letter-spacing: -0.2px;
   color: #121212;
+  font-weight: bold;
 }
 
 .book-author {
@@ -167,4 +200,74 @@ span {
 
 .book-bottom:not(:last-child) {
   border-right: solid 1px #e8e8e8;
+}
+
+.percentage-section {
+  align-items: center;
+  gap: 3%;
+  flex-shrink: 2;
+}
+
+.percentage-oval {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 5px;
+  border: 5px solid rgb(197, 197, 197);
+}
+
+.percentage {
+  font-size: 2.8rem;
+}
+
+.percentage-complete {
+  opacity: 0.5;
+  font-size: 1rem;
+  color: #121212;
+}
+
+.line2 {
+  width: 0.2rem;
+  height: 5.375rem;
+  align-self: center;
+
+  /* margin: 1.125rem 3.688rem 0 4.938rem; */
+  border: solid 2px #e8e8e8;
+  flex-shrink: 2;
+  flex-grow: 0;
+}
+
+.chapter-section {
+  flex-shrink: 2;
+
+  /* align-self: center; */
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.Current-Chapter {
+  opacity: 0.5;
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: #121212;
+}
+
+.Current-Lesson {
+  font-size: 1.6rem;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: #121212;
+}
+
+.btn-update-progress {
+  margin-top: 1rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-size: 0.8rem;
+  font-weight: 300;
+  padding: 0.7rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
 }

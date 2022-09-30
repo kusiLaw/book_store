@@ -10,7 +10,7 @@ const Book = ({ id, title, author }) => {
   };
 
   return (
-    <li className="books-item">
+    <li className="books-item d-flex">
       <div className="book-section">
         <p className="book">
           <span className="book-type">Engineering</span>
@@ -23,6 +23,23 @@ const Book = ({ id, title, author }) => {
           <button type="button" className="book-bottom">Edit</button>
         </div>
       </div>
+
+      <div className="percentage-section d-flex">
+        <div className="percentage-oval" />
+        <div>
+          <span className="percentage">0%</span>
+          <span className="percentage-complete">completed</span>
+        </div>
+      </div>
+      <div className="line2" />
+      <div className="chapter-section d-flex">
+        <div>
+          <span className="Current-Chapter">CURRENT CHAPTER</span>
+          <span className="Current-Lesson">chapter 0</span>
+        </div>
+        <button type="button" className="btn-update-progress">UPDATE PROGRESS</button>
+      </div>
+
     </li>
 
   );
