@@ -1,51 +1,29 @@
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { addNewBook } from '../redux/books/books';
+import { getBooks, addBook } from '../redux/books/books';
 
 const Form = () => {
   const dispatch = useDispatch();
   const [author, setAuthor] = useState('');
   const [title, setTitle] = useState('');
 
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
 
-  const fetchBooks = async () => {
-    try {
-      const response = await fetch('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/EF3HU7mC3UuQNf2vAE1O/books');
-      const results = await response.json();
-      dispatch(addNewBook(results));
-    } catch (e) {
-      console.log(e);
-    }
-  };
+  const addNewBook = async () => {
+    const book = {
+      item_id: uuidv4(),
+      title,
+      author,
+      category: 'Fiction',
+    };
 
-
-
-  //  useEffect(() =>{
-  //   fetchBooks()
-  // });
-
-  const addBook = async () => {
-  //  await axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/EF3HU7mC3UuQNf2vAE1O/books',
-  //  {
-  //   item_id: uuidv4(),
-  //    title,
-    //    author,
-  //   category: "Fiction"
-  // })
-  // .then(function (response) {
-  //   console.log(response);
-  // })
-  // dispatch(addNewBook(book));
-  // dispatch()
-    fetchBooks();
-
+    dispatch(addBook(book));
     setTitle('');
     setAuthor('');
   };
-
-
 
   return (
     <form className="form-container">
@@ -68,7 +46,7 @@ const Form = () => {
           onChange={(e) => { setAuthor(e.target.value); }}
         />
 
-        <button onClick={addBook} type="button" className="input-submit">Submit</button>
+        <button onClick={addNewBook} type="button" className="input-submit">Submit</button>
       </div>
     </form>
   );
