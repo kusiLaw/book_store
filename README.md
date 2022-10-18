@@ -15,7 +15,7 @@ Book Store is a simple Single Page App (SPA) that allows users to make add,remov
 
 ## Live Demo (if available)
 
-[comming soon](https://livedemo.com)
+[coming soon](https://livedemo.com)
 
 
 ## Getting Started
@@ -68,10 +68,7 @@ Feel free to check the [issues page](../../issues/).
 Give a ⭐️ if you like this project!
 
 ## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+-Microverse
 
 ## 📝 License
 
